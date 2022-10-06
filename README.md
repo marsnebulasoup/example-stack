@@ -1,2 +1,2 @@
-# stack-starter
-Starter code for creating a simple stack.
+# example data stack
+An example implementation of a stack of structs in C++, with a test suite.
