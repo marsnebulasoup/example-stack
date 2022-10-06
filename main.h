@@ -16,6 +16,7 @@ A simple implementation of a data stack.
 using std::string;
 using std::cin;
 using std::cout;
+using std::endl;
 
 
 #endif /* STACKS_MAIN_H */
