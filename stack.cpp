@@ -1,11 +1,37 @@
-/*
- * Your comment header here
- * modify this file as needed to complete the assignment
- */
+/*********************
+Name: Kevin Bryniak
+Assignment: Int Stack
+A simple implementation of a data stack.
+**********************/
 
-// each cpp includes ONLY it's header directly
 #include "stack.h"
 
-/*
- * write all your stack methods here
- */
+Stack::Stack(int size)
+{
+}
+
+Stack::~Stack()
+{
+}
+
+bool Stack::isEmpty()
+{
+  return false;
+}
+
+bool Stack::push(int id, string &information)
+{
+  return false;
+}
+
+void Stack::pop(Data &to)
+{
+}
+
+void Stack::peek(Data &to)
+{
+}
+
+void Stack::dumpStack()
+{
+}
