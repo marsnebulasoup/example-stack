@@ -21,7 +21,7 @@ Stack::~Stack()
 
 bool Stack::isEmpty()
 {
-  return false;
+  return top == -1;
 }
 
 bool Stack::push(int id, string &information)
