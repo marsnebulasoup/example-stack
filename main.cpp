@@ -13,8 +13,7 @@ int main(int argc, char **argv)
   int size;
   if (argc == 2)
   {
-    size = *argv[1] - '0'; // since argv is a char array, we subtract '0' (the character) to remove the offset.
-    cout << "---TESTS HAVE BEGUN----------------\n" << endl;
+    size = atoi(argv[1]);
     cout << "Creating a stack of size " << size << endl;
 
     Stack stack(size);
