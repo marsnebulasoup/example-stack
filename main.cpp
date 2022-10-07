@@ -23,7 +23,7 @@ int main(int argc, char **argv)
     cout << endl << "Running individual tests..." << endl;
     ASSERT_PASSED(stack.isEmpty(), "stack is initially empty.");
     
-    stack.peek(data);
+    ASSERT_PASSED(!stack.peek(data), "stack peek failed because stack is empty.");
     ASSERT_DATA_IS_EMPTY(data);
   }
   else
