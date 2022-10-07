@@ -10,15 +10,20 @@ A simple implementation of a data stack.
 #include <stdlib.h>   /* srand, rand */
 #include <time.h>     /* time */
 #include <iostream>   /* cout, endl */
+#include <iomanip>
 #include <string>     /* string */
 #include "functions.h"
 #include "stack.h"
 #include "macros.h"
 
 using std::string;
+using std::to_string;
 using std::cin;
 using std::cout;
 using std::endl;
+using std::left;
+using std::right;
+using std::setw;
 
 
 #endif /* STACKS_MAIN_H */
