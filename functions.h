@@ -13,6 +13,8 @@
 #include <time.h>     /* time */
 #include <string>     /* string */
 
-void rand_string(std::string*);
+using std::string;
+
+string rand_string();
 
 #endif /* STACKS_FUNCTIONS_H */
