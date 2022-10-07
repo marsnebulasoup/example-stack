@@ -8,10 +8,7 @@ A simple implementation of a data stack.
 
 Stack::Stack(int size)
 {
-  if (size < MIN_SIZE)
-  {
-    size = DEFAULT_SIZE;
-  }
+  this->size = (size < MIN_SIZE ? DEFAULT_SIZE : size);
   top = -1;
   stack = new Data *[size];
 }
