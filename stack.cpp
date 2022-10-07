@@ -37,7 +37,12 @@ bool Stack::pop(Data &to)
 
 bool Stack::peek(Data &to)
 {
-  return false;
+  bool isEmpty = this->isEmpty();
+
+  to.id = isEmpty ? -1 : stack[top]->id;
+  to.information = isEmpty ? "" : stack[top]->information;
+
+  return !isEmpty;
 }
 
 void Stack::dumpStack() // DEBUG ONLY
