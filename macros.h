@@ -8,7 +8,7 @@ A simple implementation of a data stack.
 #define STACKS_MACROS_H
 
 #define ASSERT_PASSED(expression, message) \
-  if (!expression)                         \
+  if (!(expression))                         \
   {                                        \
     cout << "Failed: " << message << endl; \
   }
