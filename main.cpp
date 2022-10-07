@@ -14,7 +14,13 @@ int main(int argc, char **argv)
   if (argc == 2)
   {
     size = *argv[1] - '0'; // since argv is a char array, we subtract '0' (the character) to remove the offset.
+    cout << "---TESTS HAVE BEGUN----------------\n" << endl;
     cout << "Creating a stack of size " << size << endl;
+
+    Stack stack(size);
+
+    cout << endl << "Running individual tests..." << endl;
+    ASSERT_PASSED(stack.isEmpty(), "stack is initially empty.");
   }
   else
   {

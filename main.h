@@ -12,6 +12,8 @@ A simple implementation of a data stack.
 #include <iostream>   /* cout, endl */
 #include <string>     /* string */
 #include "functions.h"
+#include "stack.h"
+#include "macros.h"
 
 using std::string;
 using std::cin;
