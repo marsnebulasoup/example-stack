@@ -13,6 +13,9 @@ A simple implementation of a data stack.
 
 using std::string;
 
+#define MIN_SIZE 2
+#define DEFAULT_SIZE 10
+
 class Stack
 {
 
