@@ -18,9 +18,13 @@ int main(int argc, char **argv)
     cout << "Creating a stack of size " << size << endl;
 
     Stack stack(size);
+    Data data;
 
     cout << endl << "Running individual tests..." << endl;
     ASSERT_PASSED(stack.isEmpty(), "stack is initially empty.");
+    
+    stack.peek(data);
+    ASSERT_DATA_IS_EMPTY(data);
   }
   else
   {

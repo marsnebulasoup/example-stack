@@ -10,4 +10,7 @@ A simple implementation of a data stack.
 #define ASSERT_PASSED(expression, message) \
   cout << (expression ? "Passed" : "Failed") << ": " << message << endl;
 
+#define ASSERT_DATA_IS_EMPTY(data) \
+  ASSERT_PASSED(data.id == -1 && data.information == "", "returned data is empty.");
+
 #endif // STACKS_MACROS_H
