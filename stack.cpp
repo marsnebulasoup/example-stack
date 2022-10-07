@@ -24,9 +24,12 @@ bool Stack::isEmpty()
 
 bool Stack::push(int id, string &information)
 {
-  bool isFull = top >= size;
-  stack[++top] = new Data{id, information};
-  return isFull;
+  bool isFull = top >= (size - 1);
+  if (!isFull)
+  {
+    stack[++top] = new Data{id, information};
+  }
+  return !isFull;
 }
 
 bool Stack::pop(Data &to)
