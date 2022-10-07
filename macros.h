@@ -11,6 +11,6 @@ A simple implementation of a data stack.
   cout << (expression ? "Passed" : "Failed") << ": " << message << endl;
 
 #define ASSERT_DATA_IS_EMPTY(data) \
-  ASSERT_PASSED(data.id == -1 && data.information == "", "returned data is empty.");
+  ASSERT_PASSED(data->id == -1 && data->information == "", "returned data is empty.");
 
 #endif // STACKS_MACROS_H
