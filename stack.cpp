@@ -32,10 +32,12 @@ bool Stack::push(int id, string &information)
 
 bool Stack::pop(Data &to)
 {
+  return false;
 }
 
 bool Stack::peek(Data &to)
 {
+  return false;
 }
 
 void Stack::dumpStack() // DEBUG ONLY
