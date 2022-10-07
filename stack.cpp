@@ -44,11 +44,20 @@ bool Stack::peek(Data &to)
 
 void Stack::dumpStack() // DEBUG ONLY
 {
-
   std::cout << "\n-- Stack: (size: " << size << ", top: " << top << ") \n| ";
   for (int i = 0; i < size; i++)
   {
-    std::cout << "(" << i << (i == top ? " - top " : "") << ") id: " << stack[i]->id << " | info: " << stack[i]->information;
+    if (i <= top)
+    {
+      std::cout << "(" << i << (i == top ? " - top " : "")
+                << ") id: " << stack[i]->id
+                << " | info: " << stack[i]->information
+                << std::endl;
+    }
+    else
+    {
+      std::cout << "(" << i << ") empty" << std::endl;
+    }
   }
   std::cout << "-- End Stack --" << std::endl;
 }
