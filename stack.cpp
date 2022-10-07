@@ -10,7 +10,7 @@ Stack::Stack(int size)
 {
   this->size = (size < MIN_SIZE ? DEFAULT_SIZE : size);
   top = -1;
-  stack = new Data *[size];
+  stack = new Data *[this->size];
 }
 
 Stack::~Stack()
