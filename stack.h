@@ -25,8 +25,8 @@ public:
 
   bool isEmpty();
   bool push(int, string&);
-  void pop(Data&);
-  void peek(Data&);
+  bool pop(Data&);
+  bool peek(Data&);
 
   // DEBUG ONLY
   void dumpStack();

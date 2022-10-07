@@ -8,11 +8,12 @@ A simple implementation of a data stack.
 
 Stack::Stack(int size)
 {
-  if(size < MIN_SIZE) {
+  if (size < MIN_SIZE)
+  {
     size = DEFAULT_SIZE;
   }
   top = -1;
-  stack = new Data*[size];
+  stack = new Data *[size];
 }
 
 Stack::~Stack()
@@ -29,11 +30,11 @@ bool Stack::push(int id, string &information)
   return false;
 }
 
-void Stack::pop(Data &to)
+bool Stack::pop(Data &to)
 {
 }
 
-void Stack::peek(Data &to)
+bool Stack::peek(Data &to)
 {
 }
 
