@@ -120,7 +120,7 @@ int main(int argc, char **argv)
       stack.peek(*previousData);
     }
 
-    cout << "Dumping final stack:" << endl;
+    cout << "\nDumping final stack:" << endl;
     stack.dumpStack();
 
     cout << "---TESTS HAVE ENDED----------------\n"

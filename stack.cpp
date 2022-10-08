@@ -61,7 +61,7 @@ bool Stack::peek(Data &to)
 
 void Stack::dumpStack() // DEBUG ONLY
 {
-  std::cout << "\n-- Stack: (size: " << size << ", top: " << top << ") |" << std::endl;
+  std::cout << "-- Stack: (size: " << size << ", top: " << top << ")" << std::endl;
   for (int i = 0; i < size; i++)
   {
     if (i <= top)
