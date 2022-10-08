@@ -17,9 +17,9 @@ A simple implementation of a data stack.
   ASSERT_PASSED(data->id == -1 && data->information == "", "returned data should be empty.");
 
 #define ASSERT_EQUAL_DATA(data1, data2, message) \
-  ASSERT_PASSED(data1.id == data2.id && data1.information == data2.information, message);
+  ASSERT_PASSED(data1->id == data2->id && data1->information == data2->information, message);
 
 #define ASSERT_UNEQUAL_DATA(data1, data2, message) \
-  ASSERT_PASSED(data1.id != data2.id || data1.information != data2.information, message);
+  ASSERT_PASSED(data1->id != data2->id || data1->information != data2->information, message);
 
 #endif // STACKS_MACROS_H
