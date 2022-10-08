@@ -25,5 +25,7 @@ using std::left;
 using std::right;
 using std::setw;
 
+#define TEST_SIZE_MULTIPLIER 1000000
+
 
 #endif /* STACKS_MAIN_H */
