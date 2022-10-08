@@ -24,12 +24,13 @@ bool Stack::isEmpty()
 
 bool Stack::push(int id, string &information)
 {
+  bool isValid = id > 0 && information.length() > 0;
   bool hasSpace = top < (size - 1);
-  if (hasSpace)
+  if (isValid && hasSpace)
   {
     stack[++top] = new Data{id, information};
   }
-  return hasSpace;
+  return isValid && hasSpace;
 }
 
 

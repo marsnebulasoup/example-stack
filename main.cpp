@@ -59,17 +59,30 @@ int main(int argc, char **argv)
       {
         if (top < size - 1) // Stack should not be full.
         {
-          ASSERT_PASSED(stack.push(currentData->id, currentData->information), "pushing random data into the non-full stack."); // Push random data into stack.
-          ASSERT_PASSED(stack.peek(*tempData), "peeking the data just pushed.");                                                // Get current element at top of stack.
-          ASSERT_EQUAL_DATA(tempData, currentData, "checking if the data just pushed is correct");                              // Assert that the top of the stack is the random data just placed into it.
-          ASSERT_PASSED(!stack.isEmpty(), "checking if the stack is not empty");                                                // Assert that the stack is not empty.
-          top++;
+          if (currentData->id <= 0 || currentData->information.length() <= 0) // Invalid data, attempt to push it
+          {
+            ASSERT_PASSED(!stack.push(currentData->id, currentData->information), "pushing random invalid data into the non-full stack succeeded.");
+            if (top != -1) // If stack isn't empty, check if the data wasn't added
+            {
+              ASSERT_PASSED(stack.peek(*tempData), "peeking the invalid data just pushed into the full stack.");
+              ASSERT_UNEQUAL_DATA(tempData, currentData, "checking if the invalid data just pushed is not there");
+            }
+          }
+          else // Valid data, push it
+          {
+            ASSERT_PASSED(stack.push(currentData->id, currentData->information), "pushing random data into the non-full stack.");
+            ASSERT_PASSED(stack.peek(*tempData), "peeking the data just pushed into the non-full stack.");
+            ASSERT_EQUAL_DATA(tempData, currentData, "checking if the data just pushed is correct");
+            ASSERT_PASSED(!stack.isEmpty(), "checking if the stack is not empty");
+            top++;
+          }
         }
-        else // Stack should be full.
+        else // Stack should be full or the data is invalid.
         {
-          ASSERT_PASSED(!stack.push(currentData->id, currentData->information), "pushing random data into the full stack succeeded."); // Push a random int into stack; expect an overflow error.
-          ASSERT_PASSED(stack.peek(*tempData), "peeking the data just pushed.");                                                       // Get current element at top of stack; expect no exception.
-          ASSERT_UNEQUAL_DATA(tempData, currentData, "checking if the data just pushed is not there");                                 // Assert that the top of the stack is the same as before.
+          ASSERT_PASSED(!stack.isEmpty(), "checking if the stack is not empty");
+          ASSERT_PASSED(!stack.push(currentData->id, currentData->information), "pushing random data into the full stack succeeded.");
+          ASSERT_PASSED(stack.peek(*tempData), "peeking the data just pushed into the full stack.");
+          ASSERT_UNEQUAL_DATA(tempData, currentData, "checking if the data just pushed is not there");
         }
       }
       else // Test pop()
