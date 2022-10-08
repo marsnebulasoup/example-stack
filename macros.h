@@ -7,10 +7,11 @@ A simple implementation of a data stack.
 #ifndef STACKS_MACROS_H
 #define STACKS_MACROS_H
 
-#define ASSERT_PASSED(expression, message) \
-  if (!(expression))                       \
-  {                                        \
+#define ASSERT_PASSED(expression, message)                            \
+  if (!(expression))                                                  \
+  {                                                                   \
     cout << "Failed: " << message << " (top: " << top << ")" << endl; \
+    failureCount++;                                                   \
   }
 
 #define ASSERT_DATA_IS_EMPTY(data) \

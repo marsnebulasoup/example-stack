@@ -14,6 +14,8 @@ int main(int argc, char **argv)
   if (argc == 2)
   {
     int top = -1;
+    int failureCount = 0;
+
     size = atoi(argv[1]);
     cout << "---TESTS HAVE BEGUN----------------\n"
          << endl;
@@ -35,7 +37,7 @@ int main(int argc, char **argv)
     ASSERT_PASSED(!stack.pop(*data), "stack pop failed because stack is empty.");
     ASSERT_DATA_IS_EMPTY(data);
 
-    cout << "Running random tests" << endl;
+    cout << "Running random tests..." << endl;
     Data *currentData = new Data;
     Data *previousData = new Data;
     Data *tempData = new Data;
@@ -59,7 +61,7 @@ int main(int argc, char **argv)
         {
           ASSERT_PASSED(stack.push(currentData->id, currentData->information), "pushing random data into the non-full stack."); // Push random data into stack.
           ASSERT_PASSED(stack.peek(*tempData), "peeking the data just pushed.");                                                // Get current element at top of stack.
-          ASSERT_EQUAL_DATA(tempData, currentData, "checking if the data just pushed is correct");                        // Assert that the top of the stack is the random data just placed into it.
+          ASSERT_EQUAL_DATA(tempData, currentData, "checking if the data just pushed is correct");                              // Assert that the top of the stack is the random data just placed into it.
           ASSERT_PASSED(!stack.isEmpty(), "checking if the stack is not empty");                                                // Assert that the stack is not empty.
           top++;
         }
@@ -67,7 +69,7 @@ int main(int argc, char **argv)
         {
           ASSERT_PASSED(!stack.push(currentData->id, currentData->information), "pushing random data into the full stack succeeded."); // Push a random int into stack; expect an overflow error.
           ASSERT_PASSED(stack.peek(*tempData), "peeking the data just pushed.");                                                       // Get current element at top of stack; expect no exception.
-          ASSERT_UNEQUAL_DATA(tempData, currentData, "checking if the data just pushed is not there");                           // Assert that the top of the stack is the same as before.
+          ASSERT_UNEQUAL_DATA(tempData, currentData, "checking if the data just pushed is not there");                                 // Assert that the top of the stack is the same as before.
         }
       }
       else // Test pop()
@@ -93,12 +95,17 @@ int main(int argc, char **argv)
           top--;
         }
       }
-            
+
       delete tempData;
       stack.peek(*previousData);
     }
 
+    cout << "Dumping final stack:" << endl;
     stack.dumpStack();
+
+    cout << "---TESTS HAVE ENDED----------------\n"
+         << endl;
+    cout << "Tests completed with " << failureCount << " failure(s)." << endl;
   }
   else
   {
