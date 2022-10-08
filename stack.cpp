@@ -18,6 +18,11 @@ Stack::~Stack()
   delete[] stack;
 }
 
+int Stack::getSize()
+{
+  return size;
+}
+
 bool Stack::isEmpty()
 {
   return top == -1;
@@ -33,7 +38,6 @@ bool Stack::push(int id, string &information)
   }
   return isValid && hasSpace;
 }
-
 
 bool Stack::pop(Data &to)
 {

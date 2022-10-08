@@ -16,16 +16,19 @@ int main(int argc, char **argv)
     int top = -1;
     int failureCount = 0;
 
-    size = atoi(argv[1]);
     cout << "---TESTS HAVE BEGUN----------------\n"
          << endl;
-    cout << "Creating a stack of size " << size << endl;
 
-    Stack stack(size);
-    Data *data = new Data;
+    Stack stack(atoi(argv[1]));
+    size = stack.getSize();
 
+    cout << "Created a stack of size " << size << endl;
+
+    // Empty tests
     cout << endl
          << "Running empty stack tests..." << endl;
+    Data *data = new Data;
+
     ASSERT_PASSED(stack.isEmpty(), "stack is initially empty.");
 
     ASSERT_PASSED(!stack.peek(*data), "stack peek failed because stack is empty.");
@@ -37,6 +40,10 @@ int main(int argc, char **argv)
     ASSERT_PASSED(!stack.pop(*data), "stack pop failed because stack is empty.");
     ASSERT_DATA_IS_EMPTY(data);
 
+    delete data;
+    data = NULL;
+
+    // Random Tests
     cout << "Running random tests..." << endl;
     Data *currentData = new Data;
     Data *previousData = new Data;

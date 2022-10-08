@@ -22,7 +22,8 @@ class Stack
 public:
   Stack(int);
   ~Stack();
-
+  
+  int getSize();
   bool isEmpty();
   bool push(int, string&);
   bool pop(Data&);
