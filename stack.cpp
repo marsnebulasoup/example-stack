@@ -15,6 +15,7 @@ Stack::Stack(int size)
 
 Stack::~Stack()
 {
+  delete[] stack;
 }
 
 bool Stack::isEmpty()
