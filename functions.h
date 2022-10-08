@@ -15,6 +15,7 @@
 
 using std::string;
 
-string rand_string();
+void rand_int(int*);
+void rand_string(string*);
 
 #endif /* STACKS_FUNCTIONS_H */
