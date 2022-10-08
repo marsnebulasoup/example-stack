@@ -24,13 +24,14 @@ bool Stack::isEmpty()
 
 bool Stack::push(int id, string &information)
 {
-  bool isFull = top >= (size - 1);
-  if (!isFull)
+  bool hasSpace = top < (size - 1);
+  if (hasSpace)
   {
     stack[++top] = new Data{id, information};
   }
-  return !isFull;
+  return hasSpace;
 }
+
 
 bool Stack::pop(Data &to)
 {
@@ -39,7 +40,6 @@ bool Stack::pop(Data &to)
   {
     delete stack[top--];
   }
-
   return peekSuccessful;
 }
 
