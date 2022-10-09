@@ -34,12 +34,22 @@ void rand_string(string *str)
   return;
 }
 
-bool try_parse(char *c, int *i )
+bool try_parse(char *c, int *i)
 {
-  int parsed = std::strtol(c, nullptr, 10);
-  int parsed_length = std::to_string(parsed).length();
-  int orig_length = 0;
-  while(c[++orig_length] != '\0');
-  if(parsed_length == orig_length) *i = parsed;
-  return parsed_length == orig_length;
+  int idx = 0;
+  bool is_valid = true;
+  do
+  {
+    if (!((idx == 0 && c[idx] == '-' && c[idx + 1] != '0' && c[idx + 1] != '\0') ||
+          (c[idx] >= '0' && c[idx] <= '9')))
+    {
+      is_valid = false;
+    }
+  } while (is_valid && c[++idx] != '\0');
+
+  if (is_valid)
+  {
+    *i = std::strtol(c, nullptr, 10);
+  }
+  return is_valid;
 }
