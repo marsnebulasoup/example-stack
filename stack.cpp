@@ -15,7 +15,8 @@ Stack::Stack(int size)
 
 Stack::~Stack()
 {
-  for(int i = 0; i < size; i++) delete stack[i];
+  for (int i = 0; i < size; i++)
+    delete stack[i];
   delete[] stack;
 }
 
@@ -31,13 +32,12 @@ bool Stack::isEmpty()
 
 bool Stack::push(int id, string &information)
 {
-  bool isValid = id > 0 && information.length() > 0;
-  bool hasSpace = top < (size - 1);
-  if (isValid && hasSpace)
+  bool isValid = (id > 0 && information.length() > 0) && (top < (size - 1));
+  if (isValid)
   {
     stack[++top] = new Data{id, information};
   }
-  return isValid && hasSpace;
+  return isValid;
 }
 
 bool Stack::pop(Data &to)
