@@ -33,3 +33,13 @@ void rand_string(string *str)
   delete buffer;
   return;
 }
+
+bool try_parse(char *c, int *i )
+{
+  int parsed = std::strtol(c, nullptr, 10);
+  int parsed_length = std::to_string(parsed).length();
+  int orig_length = 0;
+  while(c[++orig_length] != '\0');
+  if(parsed_length == orig_length) *i = parsed;
+  return parsed_length == orig_length;
+}

@@ -11,7 +11,7 @@ int main(int argc, char **argv)
   srand(time(NULL));
 
   int size;
-  if (argc == 2)
+  if (argc == 2 && try_parse(argv[1], &size))
   {
     int top = -1;
     int failureCount = 0;
