@@ -1,7 +1,8 @@
-/*
- * Your comment header here
- * modify this file as needed to complete the assignment
- */
+/*********************
+Name: Kevin Bryniak
+Assignment: Int Stack
+A simple implementation of a data stack.
+**********************/
 
 #ifndef STACKS_FUNCTIONS_H
 #define STACKS_FUNCTIONS_H
